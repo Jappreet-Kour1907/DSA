@@ -2,7 +2,7 @@
 #define MAX 100
 int list[MAX];
 int n = 0;
-void deleteFrombeg(){
+void deleteFromaBeg(){
     if(n == 0){
         printf("List Is Empty !!!\n");
         return;
@@ -13,7 +13,7 @@ void deleteFrombeg(){
     n--;
     printf("Element Deleted !!!\n");
 }
-void deleteFromend(){
+void deleteFromEnd(){
      if(n == 0){
         printf("List Is Empty !!!\n");
         return;
@@ -21,7 +21,7 @@ void deleteFromend(){
     n--;
     printf("Element Deleted !!!\n");
 }
-void deleteAtposition(int pos){
+void deleteAtPosition(int pos){
     if(n == 0){
         printf("List Is Empty !!!\n");
         return;
