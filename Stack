@@ -22,9 +22,9 @@ int pop(){
         return -1;
     }
     else{
-        int value = stack[top];
+        int val = stack[top];
         top--;
-        return value;
+        return val;
     }
 }
 int peek(){
@@ -47,7 +47,7 @@ void show(){
     }
 }
 int main(){
-    int choice, value, res;
+    int choice, val, res;
     while(1){
         printf("1. Push\n");
         printf("2. Pop\n");
