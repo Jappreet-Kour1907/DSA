@@ -6,7 +6,7 @@ void push_stack1(int value){
     if(top1 == top2-1)
         printf("\nStack Overflow. Cannot Push Data in Stack-1\n");
     else{
-        stack[++top1] == value;
+        stack[++top1] = value;
         printf("\nPushed %d into the Stack-1\n", value);
     }
 }
@@ -14,7 +14,7 @@ void push_stack2(int value){
     if(top1 == top2-1)
         printf("\nStack Overflow. Cannot Push Data in Stack-2\n");
     else{
-        stack[--top2] == value;
+        stack[--top2] = value;
         printf("\nPushed %d into the Stack-2\n", value);
     }
 }
