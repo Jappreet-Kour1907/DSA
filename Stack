@@ -48,14 +48,14 @@ void show(){
 }
 int main(){
     int choice, value, res;
-    printf("Enter Choice: ");
-    scanf("%d", &choice);
     while(1){
         printf("1. Push\n");
         printf("2. Pop\n");
         printf("3. Peek\n");
         printf("4. Show\n");
         printf("5. Exit\n");
+        printf("Enter Choice: ");
+        scanf("%d", &choice);
         switch (choice){
             case 1:
                 printf("Enter Value : ");
@@ -79,7 +79,7 @@ int main(){
                 exit(0);
                 break;
             default:
-                printf("Invalid Choice !!!\n");
+                printf("\nInvalid Choice !!!\n");
         }
         return 0;
     }
