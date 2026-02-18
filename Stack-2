@@ -94,7 +94,7 @@ int main(){
                 printf("Enter Stack Number(1-2): ");
                 scanf("%d", &num);
                 printf("Enter Value : ");
-                scanf("%d", val);
+                scanf("%d", &val);
                 if(num == 1)
                     push_stack1(val);
                 else if(num == 2)
