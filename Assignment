@@ -125,12 +125,12 @@ int main(){
                 if(num == 1){
                     res = peek_stack1();
                     if(res != -1)
-                        printf("\n%d is available at the top of the stack-1\n");
+                        printf("\n%d is available at the top of the stack-1\n",res);
                 }
                 else if(num == 2){
                     res = peek_stack2();
                     if(res != -1)
-                        printf("\n%d is available at the top of the stack-2\n");
+                        printf("\n%d is available at the top of the stack-2\n",res);
                 }
                 else 
                     printf("\nInvalid Stack Number\n");
