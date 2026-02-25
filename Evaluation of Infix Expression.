@@ -51,7 +51,13 @@ int evalInfixExpression(char* exp){
     for(i=0; i<strlen(exp); i++){
         char ch = exp[i];
         if(isdigit(ch)){
-            operand[++top1] = ch - '0';
+            int num = 0;
+            while(isdigit()){
+                 num = num * 10 + exp[i] - '0';
+                 i++;
+            }
+            i--;
+            operand[++top1] = num;
         }
         else if(ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '^'){   
             if(top2 == -1){
