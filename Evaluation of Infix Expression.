@@ -52,7 +52,7 @@ int evalInfixExpression(char* exp){
         char ch = exp[i];
         if(isdigit(ch)){
             int num = 0;
-            while(isdigit()){
+            while(isdigit(exp[i])){
                  num = num * 10 + exp[i] - '0';
                  i++;
             }
