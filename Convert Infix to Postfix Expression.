@@ -1,0 +1,59 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<ctype.h>
+#include<string.h>
+
+int precedence(char opr){
+    switch(opr){
+        case '+':
+        case '-':
+            return 1;
+        case '*':
+        case '/':
+            return 2;
+        case '^':
+            return 3;
+        default:
+            return 0;
+    }
+}
+char* convertInfixToPostfix(char* infixExp){
+    int len = strlen(infixExp);
+    int top = -1, pos = 0;
+    char *postfix = (char*)malloc(len+1);
+    char operator[len]; //Operator Stack
+    for(int i=0; i<len; i++){
+        char ch = infixExp[i];
+        if(isalnum(ch)){
+            postfix[pos++] = ch;
+        }
+        else if(ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '^'){
+            while(top != -1 && precedence(ch) <= precedence(operator[top]) && ch != '^'){
+                postfix[pos++] = operator[top--];
+            }
+            operator[++top] = ch;
+        }
+        else if(ch == '('){
+            operator[++top] = ch;
+        }
+        else if(ch == ')'){
+            while(operator[top] != '('){
+                postfix[pos++] = operator[top--];
+            }
+            top--;
+        }
+    }
+    while(top != -1){
+        postfix[pos++] = operator[top--];
+    }
+    postfix[pos] = '\0';
+    return postfix;
+}
+
+int main(){
+    char expr[100];
+    printf("Enter Infix Expression : ");
+    gets(expr);
+    printf("Postfix Expression is : %s\n", convertInfixToPostfix(expr));
+    return 0;
+}
