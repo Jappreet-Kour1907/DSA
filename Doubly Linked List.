@@ -1,0 +1,71 @@
+// Doubly Linked List.
+
+#include<stdio.h>
+#include<stdlib.h>
+struct Node{
+   int data;
+   struct Node* next;
+};
+struct Node* head = NULL;
+
+struct Node* createNode(int data){
+    struct Node* temp = (struct Node*)malloc(sizeof(struct Node));
+    temp->data = data;
+    temp->next = NULL;
+    return temp;
+}
+
+int main(){ 
+    int choice, data, pos;
+    while(1){
+        printf("-----*Doubly Linked List*-----\n");
+        printf("1.Insert in Beginning\n");
+        printf("2.Insert At End\n");
+        printf("3.Insert at Specified Position\n");
+        printf("4.Delete from Beginning\n");
+        printf("5.Delete from End\n");
+        printf("6.Delete from Specified Position\n");
+        printf("7.Display Linked List\n");
+        printf("8.Search Element In Linked List\n");
+        printf("9.Exit\n");
+        printf("Enter Choice : ");
+        scanf("%d", &choice);
+        switch(choice){
+            case 1:
+                printf("Enter data: ");
+                scanf("%d", &data);
+                break;
+            case 2:
+                printf("Enter data: ");
+                scanf("%d", &data);
+                break;
+            case 3:
+                printf("Enter Position: ");
+                scanf("%d", &pos);
+                printf("Enter Data: ");
+                scanf("%d", &data);
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                printf("Enter Position: ");
+                scanf("%d", &pos);
+                break;
+            case 7:
+                break;
+            case 8:
+                printf("Enter searching Element: ");
+                scanf("%d",&data);
+                break;
+            case 9:
+                exit(0);
+                break;
+            default:
+                printf("Invalid Choice!!!\n");
+        }
+        printf("\n");
+    }
+    return 0;
+}
