@@ -158,6 +158,7 @@ void displayList(){
 int main(){ 
     int choice, data, pos;
     while(1){
+        printf("-----*Singly Linked List*-----\n");
         printf("1.Insert in Beginning\n");
         printf("2.Insert At End\n");
         printf("3.Insert at Specified Position\n");
