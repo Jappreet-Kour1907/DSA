@@ -97,7 +97,7 @@ void deleteNodeFromEnd(){
     }
 }
 
-void deleteNodeFromAnyPos(int pos){    //0-BAsed Position
+void deleteNodeFromAnyPos(int pos){    //0-Based Position.
     if(head == NULL){
         printf("List is Empty!");
     }
