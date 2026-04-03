@@ -51,9 +51,12 @@ void insertNodeAtEnd(int data){
 }
 
 void insertNodeAtAnyPos(int data, int pos){
-    struct Node* newNode = createNode(data);
-    if(head == NULL && pos == 0)
-        insertNodeInBeg(data);
+    if(head == NULL){
+        if(pos == 0)
+            insertNodeInBeg(data);
+        else
+            printf("Invalid Position !!!\n");
+    }
     else if(pos == 0)
         insertNodeInBeg(data);
     else{
@@ -62,24 +65,68 @@ void insertNodeAtAnyPos(int data, int pos){
         while(i != pos-1){
             temp = temp-> next;
             i++;
+            if(temp == head){
+                printf("Invalid Position !!!\n");
+                return;
+            }
         }
-        if(i != pos)
-            printf("Invalid position !!!\n");
-        else{
-            struct Node* newNode = createNode(data);
-            newNode-> next = temp-> next;
-            temp-> next = newNode;
-        }
-    } 
+        struct Node* newNode = createNode(data);    
+        newNode-> next = temp-> next;
+        temp-> next = newNode;
+        printf("Node Inserted !!!\n");
+    }
 }
 
 void deleteNodeFromBeg(){
+    if(head == NULL)
+        printf("List is Empty !!!\n");
+    else{
+        struct Node* temp = head;
+        while(temp-> next != head){
+            temp = temp-> next;
+        }
+        temp-> next = head-> next;
+        head = head-> next;
+        printf("Node Deleted !!!\n");
+    }
 }
 
 void deleteNodeFromEnd(){
+    if(head == NULL)
+        printf("List is Empty !!!\n");
+    else if(head-> next == head){
+        head = NULL;
+        printf("Node Deleted !!!\n");
+    }
+    else{
+        struct Node* temp = head;
+        while(temp-> next-> next != head){
+            temp = temp-> next;
+        }
+        temp-> next = head;
+        printf("Node Deleted !!!\n");
+    }
 }
 
 void deleteNodeFromAnyPos(int pos){
+    if(head == NULL)
+        printf("List is Empty !!!\n");
+    else if(pos == 0)
+        deleteNodeFromBeg();
+    else{
+        struct Node* temp = head;
+        int i = 0;
+        while(i != pos-1 && temp-> next != head){
+            i++;
+            temp = temp-> next;
+        }
+        if(temp-> next = head)
+            printf("Invalid Position !!!\n");
+        else{
+            temp-> next = temp-> next-> next;
+            printf("Node Deleted !!!\n");
+        }
+    }
 }    
 
 void search(int value){
@@ -93,7 +140,7 @@ void search(int value){
                 temp = temp-> next;
             }
         }while(temp != head);
-        printf("Not Found !!!\n");
+        printf("\n");
     }
 }
 
@@ -103,7 +150,7 @@ void displayList(){
     else{
         struct Node* temp = head;
         do{
-            printf("%d ", temp-> next);
+            printf("%d ", temp-> data);
             temp = temp-> next;
         }while(temp != head);
         printf("\n");
