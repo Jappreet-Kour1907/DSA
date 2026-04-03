@@ -80,6 +80,10 @@ void insertNodeAtAnyPos(int data, int pos){
 void deleteNodeFromBeg(){
     if(head == NULL)
         printf("List is Empty !!!\n");
+    else if(head-> next == head){
+        head = NULL;
+        printf("Node Deleted !!!\n");
+    }
     else{
         struct Node* temp = head;
         while(temp-> next != head){
